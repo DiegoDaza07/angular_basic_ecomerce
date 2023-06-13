@@ -1,0 +1,18 @@
+<mat-toolbar color="primary" class="container-toolbar">
+    <span class="btn-toolbar" (click)="goToRoute('home')">
+        <span>DazaGamer</span>
+        <mat-icon>games</mat-icon>
+    </span>
+
+    <span class="space-toolbar"></span>
+        
+    <button mat-icon-button class="example-icon favorite-icon btn-toolbar" 
+    aria-label="Example icon-button with heart icon" (click)="goToRoute('products')">
+        <mat-icon>person_pin</mat-icon>
+        <span>INICIAR SESION</span>
+    </button>
+
+    <button class="btn-toolbar" (click)="goToRoute('shopping_cart')">
+        <mat-icon matBadge="0" matBadgeColor="warn">shopping_cart</mat-icon>
+    </button>
+</mat-toolbar>

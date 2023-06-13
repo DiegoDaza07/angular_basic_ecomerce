@@ -1,0 +1,8 @@
+.container-footer{
+    background-color: aliceblue;
+    width: calc(100% - 80px);
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

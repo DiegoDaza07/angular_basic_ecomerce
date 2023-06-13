@@ -1,0 +1,21 @@
+.container-home{
+    width: 80%;
+    padding: 40px 10% 10% 10%;
+}
+
+.content-sub-categories{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 20px;
+}
+
+@media (max-width:600px){
+    .container-home{
+        width: calc(100% - 40px);
+        padding: 20px;
+    }
+    .content-sub-categories{
+        grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    }
+}
