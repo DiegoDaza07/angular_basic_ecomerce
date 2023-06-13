@@ -1,0 +1,18 @@
+.container-toolbar{
+  display: flex;
+  justify-content: center;
+}
+
+.btn-toolbar{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border: none;
+   background-color: transparent;
+   color: white;
+   cursor: pointer;
+} 
+
+.space-toolbar{
+  width: 200px;
+}

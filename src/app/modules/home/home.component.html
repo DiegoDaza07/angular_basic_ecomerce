@@ -1,0 +1,11 @@
+<app-toolbar></app-toolbar>
+<div class="container-home">
+    <h2>¿Qué estás buscando?</h2>
+    <div class="content-sub-categories">
+        <div *ngFor="let subCategory of subCategories; let i=index ">
+            <app-card-sub-category [subCategory]="subCategory"></app-card-sub-category>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>
