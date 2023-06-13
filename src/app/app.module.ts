@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { SubCategoriesService } from './services/sub-categories/sub-categories.service';
 import { SubCategoriesImageFixService } from './services';
 
+
 @NgModule({
   declarations: [
     AppComponent,
