@@ -1,4 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.background-rgb {
+  width: 100%;
+  min-height: 10px;
+  background: linear-gradient(to right, red, green, cyan, blue, red);
+  animation: efect-rgb 10s linear infinite;
+}
+
+@keyframes efect-rgb {
+  0% {
+    background-position: -100vh 0;
+  }
+  100% {
+    background-position: 100vh 0;
+  }
+}

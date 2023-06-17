@@ -1,9 +1,18 @@
-.container-toolbar{
+.toolbar-container{
+  position: sticky;
+  width: 100%;
+  top: 0px;
+  z-index: 3;
+}
+.toolbar-content{
+  width: 100%;
   display: flex;
   justify-content: center;
+  gap: 20px;
 }
 
-.btn-toolbar{
+.toolbar-btn{
+  background-color: black;
    display: flex;
    justify-content: center;
    align-items: center;
@@ -12,7 +21,3 @@
    color: white;
    cursor: pointer;
 } 
-
-.space-toolbar{
-  width: 200px;
-}

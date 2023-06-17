@@ -1,1 +1,1 @@
-export * from './card-sub-category';
+export * from './carousel-imgs';
