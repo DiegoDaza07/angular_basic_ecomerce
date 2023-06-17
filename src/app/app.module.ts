@@ -1,12 +1,10 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
-import { SubCategoriesService } from './services/sub-categories/sub-categories.service';
-import { SubCategoriesImageFixService } from './services';
+import { AppRoutingModule } from 'src/app/app-routing.module';
+import { AppComponent } from 'src/app/app.component';
+import { ImagesService, ProductsService, SubCategoriesService } from 'src/app/services';
 
 
 @NgModule({
@@ -21,7 +19,8 @@ import { SubCategoriesImageFixService } from './services';
   ],
   providers: [
     SubCategoriesService,
-    SubCategoriesImageFixService,
+    ImagesService,
+    ProductsService,
   ],
   bootstrap: [AppComponent]
 })

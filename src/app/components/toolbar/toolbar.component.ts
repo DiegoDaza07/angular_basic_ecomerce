@@ -8,7 +8,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 @Component({
   standalone: true,
   selector: 'app-toolbar',
-  imports: [MatToolbarModule, MatIconModule, MatIconModule, MatBadgeModule, MatIconModule,],
+  imports: [MatToolbarModule, MatIconModule, MatBadgeModule,],
   templateUrl: './toolbar.component.html',
   styleUrls: ['./toolbar.component.css'],
 })
