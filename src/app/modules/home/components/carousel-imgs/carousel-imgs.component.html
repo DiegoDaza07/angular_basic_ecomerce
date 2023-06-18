@@ -6,7 +6,7 @@
 
     <div class="carousel-container-images background-rgb" id="carousel-container-id">
         <div *ngFor="let image of inputImages; let i=index">
-            <img class="carousel-img" src={{image.url}} alt={{image.name}} (click)="goToRouteCategory(image.name)">
+            <img class="carousel-img" src={{image.url}} alt={{image.name}} (click)="goToRouteCategory(image.id)">
             <span class="carousel-img-name">{{image.name}}</span>
         </div>
     </div>

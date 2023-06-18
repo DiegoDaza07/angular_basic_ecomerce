@@ -1,0 +1,15 @@
+<div>
+
+    <mat-icon class="list-sub-category-icon" (click)="activeMenu()">menu</mat-icon>
+    
+    <mat-list class="list-sub-category-container" id="list-sub-category-container-id">
+        
+
+        <mat-list-item class="list-sub-category-item" *ngFor="let subCategory of subCategories"
+            (click)="goToRouteCategory(subCategory.id)">
+            {{subCategory.nombre}}
+        </mat-list-item>
+
+    </mat-list>
+
+</div>

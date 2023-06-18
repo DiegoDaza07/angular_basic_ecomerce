@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Image, Product, SubCategory } from 'src/app/models';
 import { ImagesService, ProductsService, SubCategoriesService } from 'src/app/services';
 
@@ -13,15 +14,20 @@ export class HomeComponent implements OnInit {
     private subCategoriesService: SubCategoriesService,
     private productService: ProductsService,
     private imageService: ImagesService,
+    private router: Router
   ) { }
 
   products: Product[] = [];
   imagesSubCategories: Image[] = [];
   subcategories: SubCategory[] = [];
 
+  goToRouteCategory(id: number) {
+    this.router.navigate([`products/${id}`]);
+  };
+
   configImageSubCategory(subCategories: SubCategory[]) {
-    subCategories.map((subC)=>{
-      this.imageService.subCategoryImgUrl(subC.imagen).subscribe((res)=>{
+    subCategories.map((subC) => {
+      this.imageService.subCategoryImgUrl(subC.imagen).subscribe((res) => {
         this.imagesSubCategories.push(
           {
             id: subC.id,
@@ -33,16 +39,16 @@ export class HomeComponent implements OnInit {
     });
 
     document.documentElement.style.setProperty('--total-repeat', `${this.imagesSubCategories.length}`);
-    
+
   };
 
   ngOnInit(): void {
-    
-    this.subCategoriesService.getAllSubCategories().subscribe((subC) =>{
+
+    this.subCategoriesService.getAllSubCategories().subscribe((subC) => {
       this.configImageSubCategory(subC);
       this.subcategories = subC.slice(0, 4);
     });
 
-    this.productService.getLastProducts(6).subscribe((pr)=> this.products = pr);
+    this.productService.getLastProducts(6).subscribe((pr) => this.products = pr);
   };
 }

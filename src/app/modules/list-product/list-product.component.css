@@ -1,0 +1,42 @@
+.list-product-container{
+    width: 100%;
+    min-height: 90vh;
+    background-color: #ebebeb;
+}
+
+.list-product-img{
+    width: 100%;
+    height: auto;
+}
+
+.list-product-name{
+    position: relative;
+    max-width: 90%;
+    top: -44px;
+    left: 44px;
+    font-size: 44px;
+    color: #fff;
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+    z-index: 1;
+}
+
+.list-product-content{
+    width: 90%;
+    padding: 10px 5%;
+    display: grid;
+    grid-template-columns:  1fr 5fr;
+}
+
+.list-product-app-list{
+    width: min-content;
+    background-color: #212121;
+}
+
+.list-product-content-cards{
+    width: calc(100% - 16px);
+    display: grid;
+    padding: 8px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}

@@ -1,0 +1,22 @@
+<div class="list-product-container">
+    <app-toolbar></app-toolbar>
+
+    <img  class="list-product-img" src={{subCategory?.url_img}} alt={{subCategory?.nombre}}>
+
+    <p class="list-product-name">{{subCategory?.nombre}}</p>
+    
+    <div class="list-product-content">
+        
+        <app-list-sub-categories class="list-product-app-list" [subCategories]="subCategories"></app-list-sub-categories>
+
+        <div class="list-product-content-cards">
+
+            <div *ngFor="let product of products">
+                <app-product-card [product]="product"></app-product-card>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+    <app-footer></app-footer>
