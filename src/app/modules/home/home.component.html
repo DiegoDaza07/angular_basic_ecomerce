@@ -3,12 +3,15 @@
 
 <div class="home-container">
 
-    <mat-toolbar >
+    <mat-toolbar>
         <div class="home-toolbar">
 
-            <a class="home-toolbar-a">Ver todas las categorias</a>
-            
-            <a class="home-toolbar-categories" *ngFor="let category of subcategories">
+            <a class="home-toolbar-a" (click)="goToRouteCategory(subcategories.at(1)?.id || 1)">Ver todas las
+                categorias
+            </a>
+
+            <a class="home-toolbar-a home-toolbar-categories" *ngFor="let category of subcategories"
+                (click)="goToRouteCategory(category.id)">
                 {{category.nombre}}
             </a>
         </div>
