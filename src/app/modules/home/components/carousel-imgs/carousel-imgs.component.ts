@@ -1,8 +1,8 @@
 import { NgFor } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { Router } from '@angular/router';
-import { interval } from 'rxjs';
+import { Subject, interval, takeUntil } from 'rxjs';
 import { Image } from 'src/app/models';
 
 @Component({
@@ -12,15 +12,17 @@ import { Image } from 'src/app/models';
   styleUrls: ['./carousel-imgs.component.css'],
   imports: [MatIconModule, NgFor]
 })
-export class CarouselImgsComponent implements OnInit{
+export class CarouselImgsComponent implements OnInit, OnDestroy {
   
   constructor(private router: Router) { };
   
   @Input() inputImages?: Image[];
+  private destroy$ = new Subject<void>();
+  private interval$ = interval(5000); 
   finishScroll = true;
 
-  goToRouteCategory(categoryName: string) {
-    this.router.navigate([`products/${categoryName}`]);
+  goToRouteCategory(id: number) {
+    this.router.navigate([`products/${id}`]);
   };
 
   async changeImage(state: 'previus' | 'next') {
@@ -50,12 +52,17 @@ export class CarouselImgsComponent implements OnInit{
     }
   };
 
-
-  ngOnInit() {
-    interval(5000).subscribe(() => {
-      this.changeImage('next');
-    });
+  ngOnInit(): void {
+    this.interval$
+      .pipe(takeUntil(this.destroy$))
+      .subscribe(() => {
+        this.changeImage('next');
+      });
   }
 
+  ngOnDestroy(): void {
+    this.destroy$.next(); 
+    this.destroy$.complete(); 
+  }
 };
 

@@ -1,5 +1,5 @@
 .product-card-container{
-    max-width: 300px;
+    width: 300px;
     padding: 10px;
     display: grid;
     grid-template-rows: 20px 140px 70px 35px;
