@@ -37,8 +37,33 @@
 
         </button>
 
-        <button class="toolbar-btn" (click)="goToRoute('shopping_cart')">
-            <mat-icon matBadge="0" matBadgeColor="warn">shopping_cart</mat-icon>
+        <button class="toolbar-btn toolbar-btn-shopping-cart">
+            <mat-icon matBadge={{total_products}} matBadgeColor="warn">shopping_cart</mat-icon>
+
+            <div *ngIf="productsCart.length > 0" class="toolbar-shopping-cart">
+
+                <div class="toolbar-shopping-cart-content">
+                    <span>Producto</span>
+                    <mat-icon>exposure_plus_1</mat-icon>
+                    <span>Cantidad</span>
+                    <mat-icon>exposure_neg_1</mat-icon>
+                </div>
+
+                <div *ngFor="let list of productsCart" class="toolbar-shopping-cart-content">
+                    <img src={{list.product.imagenes.at(0)?.url}} alt="">
+                    <mat-icon (click)="addProduct(list.product)">add_shopping_cart</mat-icon>
+                    <span>{{list.quantity}}</span>
+                    <mat-icon (click)="removeProduct(list.product)">remove_shopping_cart</mat-icon>
+                </div>
+
+                <p>{{'Productos ' + total_products + ' Total: ' + total_amount }}</p>
+
+                <button (click)="emptyCart()">
+                    Vaciar Carrito
+                    <mat-icon>remove_shopping_cart</mat-icon>
+                </button>
+            </div>
+
         </button>
 
     </mat-toolbar>

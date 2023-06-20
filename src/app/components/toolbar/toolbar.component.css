@@ -54,6 +54,51 @@
   display: flex;
 }
 
+.toolbar-shopping-cart{
+  display: none;
+  width: calc(100% - 40px);
+  max-width: min-content;
+  padding: 10px;
+  top: -15px;
+  border-radius: 8px;
+  background-color: #3b3b3b;
+  position: absolute;
+  margin-top: 60px;
+  z-index: 5;
+  cursor: initial;
+  flex-direction: column;
+  gap: 15px;
+  max-height: 80vh;
+  overflow: auto;
+}
+
+.toolbar-shopping-cart-content{
+  width: min-content;
+  display: grid;
+  grid-template-columns: 100px 20px 100px 20px;
+  justify-content: left;
+  align-items: center;
+}
+.toolbar-shopping-cart-content img {
+  width: 80px;
+  padding: 10px;
+}
+
+.toolbar-shopping-cart-content mat-icon {
+  cursor: pointer;
+}
+
+.toolbar-shopping-cart button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.toolbar-btn-shopping-cart:hover > .toolbar-shopping-cart{
+  display: flex;
+}
+
+
 @media(max-width: 600px) {
   .toolbar-login-or-username-span{
     display: none;

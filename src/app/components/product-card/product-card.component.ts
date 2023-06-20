@@ -3,7 +3,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { Product, ProductImg } from 'src/app/models';
-import { ImagesService, SubCategoriesService } from 'src/app/services';
+import { ImagesService, ShoppingCartService, SubCategoriesService } from 'src/app/services';
 
 @Component({
   standalone: true,
@@ -17,6 +17,7 @@ export class ProductCardComponent implements OnChanges {
   constructor(
     private imageService: ImagesService,
     private subcategoryService: SubCategoriesService,
+    private shoppingCartService: ShoppingCartService,
   ) { }
 
   formatNumberToMoney(number: number ): string {
@@ -25,6 +26,12 @@ export class ProductCardComponent implements OnChanges {
 
   @Input() product?: Product;
   nameCategory: string = '';
+
+  addToCart() {
+    if(this.product){
+      this.shoppingCartService.addProduct(this.product)
+    }
+  };
 
 
   ngOnChanges(changes: SimpleChanges): void {
