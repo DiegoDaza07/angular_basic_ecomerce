@@ -1,0 +1,59 @@
+<div class="form-register-container">
+
+    <div class="form-register-header">
+        <h1>Registro de usuario</h1>
+        <h1 class="form-register-header-login" (click)="goToLogin()">Iniciar Sesion</h1>
+    </div>
+
+    <form class="form-register"  [formGroup]="userForm" (ngSubmit)="createUser()">
+
+        <mat-form-field>
+            <mat-label>Nombre</mat-label>
+            <input matInput placeholder="Nombre" formControlName="name" required name="name">
+            <mat-icon matSuffix>person</mat-icon>
+            <mat-error *ngIf="userForm.controls.name.invalid">Agrege un nombre</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Apellido</mat-label>
+            <input matInput placeholder="Apellido" formControlName="surnames" required name="surnames">
+            <mat-icon matSuffix>person_add</mat-icon>
+            <mat-error *ngIf="userForm.controls.surnames.invalid">Agrege un apellido</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Dni</mat-label>
+            <input matInput type="number" placeholder="Dni" formControlName="document" required name="document">
+            <mat-icon matSuffix>receipt</mat-icon>
+            <mat-error *ngIf="userForm.controls.document.invalid">Agrege un Dni Valido</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="pat@gamil.com" formControlName="email" required name="email">
+            <mat-icon matSuffix>mail</mat-icon>
+            <mat-error *ngIf="userForm.controls.email.invalid">Agrege un mail valido</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Telefono</mat-label>
+            <input matInput required type="number" formControlName="phone" name="phone"  >
+            <mat-icon matSuffix>phone</mat-icon>
+            <mat-error *ngIf="userForm.controls.phone.invalid">Agrege un Telefono Valido</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Contraseña</mat-label>
+            <input matInput [type]="hidePasswordView ? 'password' : 'text'" formControlName="password" autocomplete="on">
+            <button type="button" mat-icon-button matSuffix (click)="hidePasswordView = !hidePasswordView" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidePasswordView">
+              <mat-icon>{{hidePasswordView ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            <mat-error *ngIf="userForm.controls.password.invalid">Agrege una Contraseña de mas de 5 caracteres</mat-error>
+          </mat-form-field>
+
+        <button mat-button type="submit">Crear nuevo usuario</button>
+    </form>
+    
+    <mat-error *ngIf="errorCreate.state">{{errorCreate.text}}</mat-error>
+
+</div>

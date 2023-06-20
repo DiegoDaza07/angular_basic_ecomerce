@@ -1,0 +1,31 @@
+<div class="form-login-container">
+
+    <div class="form-login-header">
+      <h1>Iniciar Sesion</h1>
+      <h1 class="form-login-header-register" (click)="goToRegister()">Regitrarse</h1>
+    </div>
+
+
+    <form class="form-login"  [formGroup]="loginForm" (ngSubmit)="login()">
+
+        <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="pat@gamil.com" formControlName="email" required name="email">
+            <mat-icon matSuffix>mail</mat-icon>
+            <mat-error *ngIf="loginForm.controls.email.invalid">Agrege un mail valido</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Contraseña</mat-label>
+            <input matInput [type]="hidePasswordView ? 'password' : 'text'" formControlName="password" autocomplete="on">
+            <button type="button" mat-icon-button matSuffix (click)="hidePasswordView = !hidePasswordView" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidePasswordView">
+              <mat-icon>{{hidePasswordView ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+          </mat-form-field>
+
+        <button mat-button type="submit">Iniciar sesión</button>
+    </form>
+    
+    <mat-error *ngIf="errorLogin.state">{{errorLogin.text}}</mat-error>
+
+</div>

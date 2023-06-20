@@ -1,0 +1,32 @@
+.form-login-container{
+    width: calc(100% - 40px);
+    min-width: 300px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    background-color: #4a4a4a;
+    color: #fff;
+    border-radius: 6px;
+}
+.form-login-header{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.form-login-header-register{
+    cursor: pointer;
+}
+
+.form-login-header-register:hover{
+    color: rgb(55, 255, 195);
+    font-weight: 400;
+}
+
+.form-login{
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}

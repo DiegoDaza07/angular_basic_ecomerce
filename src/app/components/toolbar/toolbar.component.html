@@ -1,20 +1,46 @@
 <div class="toolbar-container">
 
     <mat-toolbar class="toolbar-content">
+
         <a class="toolbar-btn" (click)="goToRoute('home')">
             <span>DazaGamer</span>
             <mat-icon>games</mat-icon>
         </a>
 
-        <button mat-icon-button class="example-icon favorite-icon toolbar-btn"
-            aria-label="Example icon-button with heart icon" (click)="goToRoute('products')">
+        <button mat-icon-button class="example-icon favorite-icon toolbar-btn toolbar-btn-login"
+            aria-label="Example icon-button with heart icon" (click)="goToRoute(userLogin ? '' : 'login')">
             <mat-icon>person_pin</mat-icon>
-            <span>INICIAR SESION</span>
+            <span class="toolbar-login-or-username-span">{{userLogin ? userLogin.name : 'INICIAR SESIÓN'}}</span>
+
+            <div *ngIf="userLogin" class="toolbar-log-out-container">
+
+                <div class="toolbar-log-out-content">
+                    <mat-icon>person</mat-icon>
+                    <h3>{{userLogin.name + ' ' + userLogin.surnames}}</h3>
+                </div>
+
+                <div class="toolbar-log-out-content">
+                    <mat-icon (click)="hidePasswordView= !hidePasswordView">{{hidePasswordView ? 'visibility_off' :
+                        'visibility'}}</mat-icon>
+                    <h3>{{hidePasswordView ? '*'.repeat(userLogin.password.length) : userLogin.password}}</h3>
+                </div>
+
+                <div class="toolbar-log-out-content">
+                    <button mat-icon-button class="example-icon favorite-icon toolbar-btn" (click)="logOut()"
+                        aria-label="Example icon-button with heart icon">
+                        <mat-icon>cancel</mat-icon>
+                        Cerrar sesión
+                    </button>
+                </div>
+
+            </div>
+
         </button>
 
         <button class="toolbar-btn" (click)="goToRoute('shopping_cart')">
             <mat-icon matBadge="0" matBadgeColor="warn">shopping_cart</mat-icon>
         </button>
+
     </mat-toolbar>
 
     <div class="background-rgb"></div>
