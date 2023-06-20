@@ -1,0 +1,16 @@
+.register-container{
+    width: 80%;
+    padding: 20px 10%;
+    min-height: 75.9vh;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    background-color: #ebebeb;
+}
+
+@media (max-width: 600px) {
+    .register-container{
+        width: calc(100% - 40px);
+        padding: 20px;
+    }
+}

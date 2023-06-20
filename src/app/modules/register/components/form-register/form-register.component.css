@@ -1,0 +1,30 @@
+.form-register-container{
+    width: calc(100% - 40px);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    background-color: #4a4a4a;
+    color: #fff;
+    border-radius: 6px;
+}
+.form-register-header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-register-header-login{
+    cursor: pointer;
+}
+.form-register-header-login:hover{
+    color: aqua;
+    font-weight: 400;
+}
+
+.form-register{
+    max-width: 600px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    justify-content: center;
+    gap: 20px;
+}

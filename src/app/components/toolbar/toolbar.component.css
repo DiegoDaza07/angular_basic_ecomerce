@@ -1,23 +1,66 @@
-.toolbar-container{
+.toolbar-container {
   position: sticky;
   width: 100%;
   top: 0px;
   z-index: 3;
 }
-.toolbar-content{
+
+.toolbar-content {
   width: 100%;
   display: flex;
   justify-content: center;
   gap: 20px;
 }
 
-.toolbar-btn{
+.toolbar-btn {
   background-color: black;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   border: none;
-   background-color: transparent;
-   color: white;
-   cursor: pointer;
-} 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+  gap: 10px;
+  padding: 0;
+  font-size: 16px;
+}
+
+
+.toolbar-log-out-container {
+  display: none;
+  width: 210px;
+  padding: 20px;
+  top: -15px;
+  height: 110px;
+  border-radius: 8px;
+  background-color: #3b3b3b;
+  position: absolute;
+  margin-top: 60px;
+  align-items: center;
+  flex-direction: column;
+  z-index: 5;
+  cursor: initial;
+}
+
+.toolbar-log-out-content {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start;
+}
+
+.toolbar-btn-login:hover>.toolbar-log-out-container {
+  display: flex;
+}
+
+@media(max-width: 600px) {
+  .toolbar-login-or-username-span{
+    display: none;
+  }
+
+  .toolbar-log-out-container {
+    left: 5px;
+  }
+  
+}
