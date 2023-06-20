@@ -10,7 +10,7 @@
 
   <p class="product-card-price">{{formatNumberToMoney(product?.precio || 0)}}</p>
 
-  <button class="product-card-btn">
+  <button class="product-card-btn" (click)="addToCart()">
     <mat-icon>shopping_cart</mat-icon>
     <span>Agregar</span>
   </button>
