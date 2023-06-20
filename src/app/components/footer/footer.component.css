@@ -1,3 +1,9 @@
 .footer-container{
     width: 100%;
 }
+
+@media(max-width:600px ) {
+    .footer-container p{
+        font-size: 12px;
+    }
+}

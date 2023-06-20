@@ -107,5 +107,9 @@
   .toolbar-log-out-container {
     left: 5px;
   }
+
+  .toolbar-shopping-cart{
+    right: 15px;
+  }
   
 }
